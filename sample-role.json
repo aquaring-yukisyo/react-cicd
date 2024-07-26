@@ -22,8 +22,7 @@
       "Effect": "Allow",
       "Action": ["s3:Get*", "s3:List*"],
       "Resource": [
-        "arn:aws:s3:::your-bucket-name",
-        "arn:aws:s3:::your-bucket-name/*"
+        "*"
       ]
     },
     {

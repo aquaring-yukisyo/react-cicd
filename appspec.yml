@@ -15,7 +15,7 @@
 version: 0.0
 os: linux
 files:
-  - source: build/
+  - source: \
     destination: /var/www/html/cicd
 
 # scriptsディレクトリ内に必要なスクリプト（before_install.sh, after_install.sh, start_server.sh, validate_service.sh）を配置してください。
