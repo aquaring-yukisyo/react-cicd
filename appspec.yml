@@ -1,0 +1,38 @@
+# appspec.yml
+# 
+# このファイルはCodeDeployの設定ファイルです。
+# buildディレクトリ内のすべてのファイルを
+# EC2インスタンスの/var/www/html/cicdフォルダに配置します。
+# 
+# 主な仕様:
+# - ソースディレクトリ: build
+# - デプロイ先ディレクトリ: /var/www/html/cicd
+# 
+# 制限事項:
+# - EC2インスタンスに適切な権限が必要です。
+# - デプロイ先ディレクトリのパーミッションに注意してください。
+
+version: 0.0
+os: linux
+files:
+  - source: build/
+    destination: /var/www/html/cicd
+
+# scriptsディレクトリ内に必要なスクリプト（before_install.sh, after_install.sh, start_server.sh, validate_service.sh）を配置してください。
+# hooks:
+#   BeforeInstall:
+#     - location: scripts/before_install.sh
+#       timeout: 300
+#       runas: root
+#   AfterInstall:
+#     - location: scripts/after_install.sh
+#       timeout: 300
+#       runas: root
+#   ApplicationStart:
+#     - location: scripts/start_server.sh
+#       timeout: 300
+#       runas: root
+#   ValidateService:
+#     - location: scripts/validate_service.sh
+#       timeout: 300
+#       runas: root
